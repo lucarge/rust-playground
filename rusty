@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function build {
+  docker build -t rust-playground .
+}
+
+function bye {
+  docker-machine stop personal-machine
+}
+
+function run {
+  docker run -it --rm --name rust-playground --volume $(pwd):/usr/app --workdir /usr/app rust-playground bash
+}
+
+function welcome {
+  docker-machine restart personal-machine
+  docker-machine env personal-machine
+}
+
+while [[ $# -gt 0 ]]
+do
+  case "$1" in
+    build)
+      build
+      exit
+    ;;
+
+    bye)
+      bye
+      exit
+    ;;
+
+    run)
+      run
+      exit
+    ;;
+
+    welcome)
+      welcome
+      exit
+    ;;
+  esac
+
+  shift
+done
