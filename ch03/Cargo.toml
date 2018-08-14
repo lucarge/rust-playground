@@ -1,8 +1,6 @@
 [package]
-name = "ch02"
+name = "ch03"
 version = "0.1.0"
 authors = ["Luca Argenziano <luca.argenziano@icloud.com>"]
 
 [dependencies]
-
-rand = "0.3.14"
