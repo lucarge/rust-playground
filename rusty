@@ -9,7 +9,12 @@ function bye {
 }
 
 function run {
-  docker run -it --rm --name rust-playground --volume $(pwd):/usr/app --workdir /usr/app rust-playground bash
+  docker run -it --rm \
+    --env USER='Luca Argenziano <luca.argenziano@icloud.com>' \
+    --name rust-playground \
+    --volume $(pwd):/usr/app \
+    --workdir /usr/app \
+    rust-playground bash
 }
 
 function welcome {
