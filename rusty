@@ -12,6 +12,7 @@ function run {
   docker run -it --rm \
     --env USER='Luca Argenziano <luca.argenziano@icloud.com>' \
     --name rust-playground \
+    --publish 8080:8080 \
     --volume $(pwd):/usr/app \
     --workdir /usr/app \
     rust-playground bash
